@@ -19,3 +19,13 @@ document.getElementById('playAudio').addEventListener('click', function() {
   audio.play();
   playPauseAudioButton.textContent = 'Pause';
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('footer button');
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+});
